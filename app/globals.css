@@ -12,6 +12,20 @@
     format("woff2");
 }
 
+@font-face {
+  font-family: "Poppins";
+
+  src: url("https://db.onlinewebfonts.com/t/8e85c24067e0c4f54318abf16531ece7.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Quicksand";
+
+  src: url("https://db.onlinewebfonts.com/t/21bfa7d415073b05f611f3d15588ffd8.woff2")
+    format("woff2");
+}
+
 @theme {
   --color-primary: #e0004d;
   --color-orange: #ff8c1c;
@@ -20,4 +34,6 @@
 
   --font-primary: "Kogaine Demo", sans-serif;
   --font-secondary: "Bricolage Grotesque", sans-serif;
+  --font-tertiary: "Poppins", sans-serif;
+  --font-quaternary: "Quicksand", sans-serif;
 }
