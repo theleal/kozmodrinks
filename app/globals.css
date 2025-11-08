@@ -37,3 +37,36 @@
   --font-tertiary: "Poppins", sans-serif;
   --font-quaternary: "Quicksand", sans-serif;
 }
+
+.marquee-text {
+  overflow: clip;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #e0004d;
+}
+
+.marquee-text-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-move-text var(--speed, 10s) linear infinite
+    var(--direction, forwards);
+}
+
+@keyframes marquee-move-text {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+.fadeout-horizontal {
+  mask-image: linear-gradient(
+    to right,
+    black 5rem,
+    black calc(100% - 10rem),
+  );
+}
