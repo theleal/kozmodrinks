@@ -1,68 +1,31 @@
+import Button from "@/src/components/Button";
 import Image from "next/image";
 
 export default function Home() {
-
   return (
-
-<section>
-    <div className="w-full 
-                    min-h-screen 
-                    bg-[url('/homeAssets/backgroundhome.png')] 
-                    bg-top 
-                    bg-no-repeat  
-                    relative 
-                    overflow-hidden
-                    z-1
-                    block"
-                    
-                    >
-
-      <div>
-        <div className="pl-[320px] pt-[131px]">
-
-          <div className="">
-              <Image 
-                src="/homeAssets/logo.png" 
-                alt="Logo Kozmo" 
-                width={270}
-                height={42}
-                className="" 
-              />
-          </div>
-
-          <div className=""> 
-            <h1 className="font-kogaine">
-              Um brinde<br/>ao Infinito
-            </h1>
-          </div>
-
-          <div className=""> 
-            <p>
-              Drinks artesanais com personalidade cósmica. 12 sabores únicos inspirados nos signos do zodíaco. 100% natural.
-            </p>
-          </div>
-
-          <div className=""> 
-            <button className="">
-              EXPERIMENTAR AGORA
-            </button>
-            <button className="">
-              SEJA UM PARCEIRO
-            </button>
-          </div>
-
-        </div>
-      </div>                  
-
-    </div>
-
-
-
-  
-
-
-</section>
-
-
+    <section className="h-screen w-full bg-[url('/assets/home-bg.webp')] bg-cover bg-center flex flex-col justify-center">
+      <div className="flex flex-col container mx-80 gap-4">
+        <Image src="/assets/logo.webp" alt="logo" width={260} height={42} />
+        <h1 className="text-primary font-primary text-8xl">
+          Um brinde <br /> ao Infinito
+        </h1>
+        <p className="text-secondary font-secondary text-2xl mb-6">
+          <b>
+            Drinks artesanais com personalidade <br />
+            cósmica.
+          </b>{" "}
+          12 sabores únicos inspirados nos <br /> signos do zodíaco. 100%
+          natural.
+        </p>
+        <div className="flex gap-10">
+          <Button className=" h-16 bg-orange font-medium uppercase">
+            Experimentar agora
+          </Button>
+          <Button className=" h-16 bg-purple font-medium uppercase">
+            seja um parceiro
+          </Button>
+        </div>{" "}
+      </div>
+    </section>
   );
 }

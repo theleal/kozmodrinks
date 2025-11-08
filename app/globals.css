@@ -1,28 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-html, body {
-  scroll-behavior: smooth;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
+@font-face {
+  font-family: "Kogaine Demo";
+  src: url("https://db.onlinewebfonts.com/t/abc590850da9cb9f2579d927a5276e47.woff2")
+    format("woff2");
 }
 
 @font-face {
-    font-family: "Kogaine Demo";
-    src: url("https://db.onlinewebfonts.com/t/abc590850da9cb9f2579d927a5276e47.woff2")format("woff2");
+  font-family: "Bricolage Grotesque";
+  src: url(https://db.onlinewebfonts.com/c/102353a74d2e0700af3e11ef8a917b26?family=Bricolage+Grotesque)
+    format("woff2");
 }
 
-.font-kogaine {
-  font-family: "Kogaine Demo", sans-serif;
+@theme {
+  --color-primary: #e0004d;
+  --color-orange: #ff8c1c;
+  --color-purple: #492b93;
+  --color-secondary: #290b42;
+
+  --font-primary: "Kogaine Demo", sans-serif;
+  --font-secondary: "Bricolage Grotesque", sans-serif;
 }
