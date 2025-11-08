@@ -3,7 +3,8 @@ import Drink from "./Drink";
 import Like from "./Like";
 import Plant from "./Plant";
 import Signal from "./Signal";
-import { default as Stars, default as User } from "./Star";
+import Star from "./Star";
+import User from "./User";
 
 export default {
   plant: Plant,
@@ -11,6 +12,6 @@ export default {
   drink: Drink,
   like: Like,
   signal: Signal,
-  stars: Stars,
+  star: Star,
   user: User,
 };

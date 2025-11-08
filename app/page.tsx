@@ -1,8 +1,51 @@
 import Button from "@/src/components/Button";
+import Card from "@/src/components/Card";
 import Footer from "@/src/components/Footer";
 import Image from "next/image";
 
 export default function Home() {
+  const feedbacks = [
+    {
+      username: "amandao_",
+      description: (
+        <span>
+          &quot;Não é exagero: melhor drink que já <br /> tomei na praia. E olha
+          que eu sou <br /> exigente! &quot;
+        </span>
+      ),
+      product: {
+        name: "Taurus",
+        imageUrl: "/assets/drink-taurus.webp",
+      },
+    },
+    {
+      username: "giovana.nunes",
+      description: (
+        <span>
+          &quot;A textura é perfeita, o sabor é <br /> intenso... dá pra sentir
+          que é fruta <br /> de verdade.&quot;
+        </span>
+      ),
+      product: {
+        name: "Leo",
+        imageUrl: "/assets/drink-leo.webp",
+      },
+    },
+    {
+      username: "ju_prado",
+      description: (
+        <span>
+          &quot;Comprei por causa do signo, mas <br /> virei cliente pelo sabor.
+          Kozmo é <br /> viciante!&quot;
+        </span>
+      ),
+      product: {
+        name: "Virgo",
+        imageUrl: "/assets/drink-virgo.webp",
+      },
+    },
+  ];
+
   return (
     <>
       {" "}
@@ -30,38 +73,63 @@ export default function Home() {
           </div>{" "}
         </div>
       </section>
-      <section className="w-full py-20 flex flex-col justify-center bg-orange items-center">
-        <h3 className="text-purple font-secondary text-5xl font-bold">
+      <section className="h-screen w-full flex justify-center items-center gap-20 bg-[#EADDED]">
+        <div className="flex items-center justify-center mr-20">
+          <div className="relative">
+            <Image
+              src="/assets/symbol.webp"
+              alt="symbol"
+              width={700}
+              height={650}
+            />
+            <Image
+              className="absolute top-8 left-6/12"
+              src="/assets/woman.webp"
+              alt="woman"
+              width={460}
+              height={166}
+            />
+          </div>
+        </div>
+        <div className="font-secondary flex flex-col">
+          <h3 className="text-primary text-5xl font-medium">
+            Mais do que um drink. <br /> Uma experiência astral.
+          </h3>
+          <div className="font-normal flex flex-col gap-6 mt-6 mb-10 text-2xl">
+            <p>
+              O mercado de bebidas é genérico. <br /> Repetitivo. Sem alma. A
+              gente entendeu <br />
+              que você não quer só matar a sede.
+            </p>
+            <p>
+              {" "}
+              Você quer viver momentos únicos. <br />
+              Quer sabor de verdade. Quer algo que combine <br /> com sua
+              energia.{" "}
+            </p>
+          </div>
+
+          <p className="font-bold w-max bg-orange rounded-2xl pl-10 pr-16 py-4">
+            Por isso criamos Kozmo: drinks cremosos e <br /> refrescantes feitos com
+            frutas reais, sem <br />artificialidades, cada um com a personalidade <br />de
+            um signo do zodíaco.
+          </p>
+        </div>
+        <div></div>
+      </section>
+      <section className="w-full pt-20 pb-40 flex flex-col justify-center bg-orange items-center">
+        <h3 className="text-purple font-secondary text-5xl font-bold mb-20 ">
           Quem já provou, aprovou!
         </h3>
-        <div className="bg-white py-6 px-10 rounded-2xl font-secondary text-gray-500 text-lg">
-          <div className="flex justify-between">
-            <div className="flex gap-2">
-              <span className="bg-primary h-12 w-12 rounded-full flex items-center justify-center">
-                icon
-              </span>
-              <span>amandao_</span>
-            </div>
-            <div className="">estrelas</div>
-          </div>
-          <div>
-            <span>
-              &quot;Não é exagero: melhor drink que já tomei <br /> na praia. E
-              olha que eu sou <br /> exigente!&quot;
-            </span>
-          </div>
-          <div className="flex gap-3 items-center mt-4">
-            <Image
-              src="/assets/drink-taurus.webp"
-              alt="drink taurus"
-              width={40}
-              height={50}
+        <div className="flex gap-10 justify-center max-w-7xl">
+          {feedbacks.map((feedback, index) => (
+            <Card
+              key={index}
+              username={feedback.username}
+              description={feedback.description}
+              product={feedback.product}
             />
-            <div className="text-purple flex flex-col text-sm">
-              <span className="font-bold">Recomendo este produto</span>
-              <span className="font-normal">Taurus</span>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
       <Footer />
