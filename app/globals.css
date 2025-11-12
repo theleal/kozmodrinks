@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Bricolage Grotesque";
-  src: url(https://db.onlinewebfonts.com/c/102353a74d2e0700af3e11ef8a917b26?family=Bricolage+Grotesque)
+  src: url("https://fonts.gstatic.com/s/bricolagegrotesque/v9/3y9K6as8bTXq_nANBjzKo3IeZx8z6up5BeSl9D4dj_x9PpZBMlGIInE.woff2")
     format("woff2");
 }
 
@@ -38,35 +38,15 @@
   --font-quaternary: "Quicksand", sans-serif;
 }
 
-.marquee-text {
-  overflow: clip;
-}
-
-.wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: #e0004d;
-}
-
-.marquee-text-track {
-  display: flex;
-  width: max-content;
-  animation: marquee-move-text var(--speed, 10s) linear infinite
-    var(--direction, forwards);
-}
-
-@keyframes marquee-move-text {
-  to {
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
     transform: translateX(-50%);
   }
 }
 
-
-
-.fadeout-horizontal {
-  mask-image: linear-gradient(
-    to right,
-    black 5rem,
-    black calc(100% - 10rem),
-  );
+@utility animate-marquee {
+  animation: marquee 10s linear infinite;
 }

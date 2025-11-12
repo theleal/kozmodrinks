@@ -1,61 +1,37 @@
-    import Icon from "../icons"
-    import clsx from "clsx";
+import clsx from "clsx";
+import Icon from "../icons";
 
-    type props = {
-        className: string;
-    }
+type Props = {
+  className?: string;
+};
 
-    export default function SpinnerText({className} : props) {
-    return (
-        <div className="wrapper fadeout-horizontal">
-
-        
-    <div className="marquee-text">
-
-        <div className={clsx("h-20 flex over justify-center text-white font-secondary font-extralight  text-md items-center gap-6 marquee-text-track" , className)}>
-            <div className="flex items-center gap-3 whitespace-nowrap">
-                <Icon name="conservant" size={24} color="white" />
-                <p>SEM CONSERVANTES</p>
+export default function SpinnerText({ className }: Props) {
+  
+  const items = [
+    { icon: "conservant", text: "SEM CONSERVANTES", size:24 },
+    { icon: "plant", text: "FRUTAS NATURAIS", size:24 },
+    { icon: "drink", text: "PRONTO PARA BEBER", size:18 },
+    { icon: "signal", text: "ENCONTRE SEU SIGNO", size:24 },
+    { icon: "conservant", text: "SEM CONSERVANTES", size:24 },
+    { icon: "plant", text: "FRUTAS NATURAIS", size:24 },
+    { icon: "drink", text: "PRONTO PARA BEBER", size:18 },
+    { icon: "signal", text: "ENCONTRE SEU SIGNO", size:24 },
+    { icon: "conservant", text: "SEM CONSERVANTES", size:24 },
+    { icon: "plant", text: "FRUTAS NATURAIS", size:24 },
+    { icon: "drink", text: "PRONTO PARA BEBER", size:18 },
+    { icon: "signal", text: "ENCONTRE SEU SIGNO", size:24 },
+  ] as const;
+  
+  return (
+    <div className={clsx("overflow-hidden relative w-full", className)}>
+      <div className="h-20 flex w-max animate-marquee whitespace-nowrap justify-center items-center">
+        {items.concat(items).map((item, i) => (
+            <div key={i} className="flex items-center justify-center px-3 text-white font-secondary font-light text-md">
+                <Icon className="" name={item.icon} size={item.size} color="white" />
+                <p className="ml-2">{item.text}</p>
             </div>
-
-            <div className="flex items-center gap-3 whitespace-nowrap">
-                <Icon name="plant" size={24} color="white" />
-                <p>FRUTAS NATURAIS</p>
-            </div>
-
-            <div className="flex items-center justify-center gap-3 whitespace-nowrap">
-                <Icon name="drink" size={20} color="white" />
-                <p>PRONTO PARA BEBER</p>
-            </div>
-
-            <div className="flex items-center gap-3 whitespace-nowrap">
-                <Icon name="signal" size={24} color="white" />
-                <p>ENCONTRE SEU SIGNO</p>
-            </div>
-
-            <div className="flex items-center gap-3 whitespace-nowrap">
-                <Icon name="conservant" size={24} color="white" />
-                <p>SEM CONSERVANTES</p>
-            </div>
-            
-            <div className="flex items-center gap-3 whitespace-nowrap">
-                <Icon name="plant" size={24} color="white" />
-                <p>FRUTAS NATURAIS</p>
-            </div>
-
-            <div className="flex items-center justify-center gap-3 whitespace-nowrap">
-                <Icon name="drink" size={20} color="white" />
-                <p>PRONTO PARA BEBER</p>
-            </div>
-
-            <div className="flex items-center gap-3 whitespace-nowrap">
-                <Icon name="signal" size={24} color="white" />
-                <p>ENCONTRE SEU SIGNO</p>
-            </div>
-            
-        </div>
+        ))}
+      </div>
     </div>
-    </div>
-
-    );
-    }
+  );
+}
