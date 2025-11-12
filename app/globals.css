@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Bricolage Grotesque";
-  src: url(https://db.onlinewebfonts.com/c/102353a74d2e0700af3e11ef8a917b26?family=Bricolage+Grotesque)
+  src: url("https://fonts.gstatic.com/s/bricolagegrotesque/v9/3y9K6as8bTXq_nANBjzKo3IeZx8z6up5BeSl9D4dj_x9PpZBMlGIInE.woff2")
     format("woff2");
 }
 
@@ -36,4 +36,17 @@
   --font-secondary: "Bricolage Grotesque", sans-serif;
   --font-tertiary: "Poppins", sans-serif;
   --font-quaternary: "Quicksand", sans-serif;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 10s linear infinite;
 }

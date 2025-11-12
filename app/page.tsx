@@ -1,5 +1,6 @@
 import Button from "@/src/components/Button";
 import Footer from "@/src/components/Footer";
+import SpinnerText from "@/src/components/Spinner";
 import Image from "next/image";
 
 export default function Home() {
@@ -21,15 +22,16 @@ export default function Home() {
             natural.
           </p>
           <div className="flex gap-10">
-            <Button className=" h-16 bg-orange font-medium uppercase">
+            <Button className=" h-16 bg-orange font-medium border border-white uppercase">
               Experimentar agora
             </Button>
-            <Button className=" h-16 bg-purple font-medium uppercase">
+            <Button className=" h-16 bg-purple font-medium border border-white uppercase">
               seja um parceiro
             </Button>
           </div>{" "}
         </div>
       </section>
+      <SpinnerText className="bg-primary"/>
       <section className="w-full py-20 flex flex-col justify-center bg-orange items-center">
         <h3 className="text-purple font-secondary text-5xl font-bold">
           Quem já provou, aprovou!
