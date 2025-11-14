@@ -12,7 +12,7 @@ type CardProps = {
 
 export default function Card({ username, description, product }: CardProps) {
   return (
-    <div className="bg-white flex flex-col py-7 pl-6 pr-12 rounded-2xl font-secondary text-gray-500 text-lg">
+    <div className="bg-white flex flex-col py-7 px-12 rounded-2xl font-secondary text-gray-500 text-lg">
       <div className="flex justify-between items-center">
         <div className="flex gap-4 items-center">
           <span className="bg-primary h-12 w-12 rounded-full flex items-center justify-center">

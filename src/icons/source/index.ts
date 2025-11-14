@@ -14,4 +14,5 @@ export default {
   signal: Signal,
   star: Star,
   user: User,
+
 };
