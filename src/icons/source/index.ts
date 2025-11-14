@@ -5,8 +5,13 @@ import Plant from "./Plant";
 import Signal from "./Signal";
 import Star from "./Star";
 import User from "./User";
+import LeftArrow from "./LeftArrow";
+import RighArrow from "./RighArrow";
 
 export default {
+  
+  leftArrow: LeftArrow,
+  rightArrow: RighArrow,
   plant: Plant,
   conservant: Conservant,
   drink: Drink,

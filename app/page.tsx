@@ -1,5 +1,6 @@
 import Button from "@/src/components/Button";
 import Card from "@/src/components/Card";
+import Carousel from "@/src/components/Carousel";
 import Footer from "@/src/components/Footer";
 import SpinnerText from "@/src/components/Spinner";
 import Icon from "@/src/icons";
@@ -50,7 +51,6 @@ export default function Home() {
 
   return (
     <>
-      {" "}
       <section className="h-screen w-full bg-[url('/assets/home-bg.webp')] bg-cover bg-center flex flex-col justify-center">
         <div className="flex flex-col container mx-80 gap-4">
           <Image src="/assets/logo.webp" alt="logo" width={260} height={42} />
@@ -61,7 +61,7 @@ export default function Home() {
             <b>
               Drinks artesanais com personalidade <br />
               cósmica.
-            </b>{" "}
+            </b>
             12 sabores únicos inspirados nos <br /> signos do zodíaco. 100%
             natural.
           </p>
@@ -72,9 +72,10 @@ export default function Home() {
             <Button className=" h-16 bg-purple font-medium border border-white uppercase">
               seja um parceiro
             </Button>
-          </div>{" "}
+          </div>
         </div>
       </section>
+      <SpinnerText className="bg-primary"/>
       <section className="min-h-screen w-full flex flex-col justify-center items-center gap-20 py-32 bg-[#EADDED]">
         <div className="flex justify-center items-center gap-20">
           <div className="flex items-center justify-center mr-20">
@@ -162,6 +163,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Carousel className="bg-purplebg"/>
       <section className="w-full pt-20 pb-40 flex flex-col justify-center bg-orange items-center">
         <h3 className="text-purple font-secondary text-5xl font-bold mb-20 ">
           Quem já provou, aprovou!
