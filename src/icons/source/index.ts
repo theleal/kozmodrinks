@@ -7,9 +7,16 @@ import Star from "./Star";
 import User from "./User";
 import LeftArrow from "./LeftArrow";
 import RighArrow from "./RighArrow";
+import Instagram from "./Instagram";
+import TikTok from "./TikTok";
+import Youtube from "./Youtube";
+import Whatsapp from "./Whatsapp";
 
 export default {
-  
+  whatsapp: Whatsapp,
+  tikTok: TikTok,
+  youtube: Youtube,
+  instagram: Instagram,
   leftArrow: LeftArrow,
   rightArrow: RighArrow,
   plant: Plant,
@@ -19,5 +26,4 @@ export default {
   signal: Signal,
   star: Star,
   user: User,
-
 };

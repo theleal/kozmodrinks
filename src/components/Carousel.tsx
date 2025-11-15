@@ -67,7 +67,6 @@ export default function Carousel({ className }: Props) {
       description:
         "Polpa de maracujá puro, açúcar refinado, cachaça, leite e derivados, enzima lactase.",
     },
-
   ];
 
   // Criamos um mega-array (triplo)
@@ -110,9 +109,18 @@ export default function Carousel({ className }: Props) {
   }, [index, base]);
 
   return (
-    <div className={clsx("flex justify-center items-center min-h-screen", className)}>
-      <div className="flex items-center gap-8">
+    <div
+      className={clsx(
+        "flex flex-col justify-center pb-32 items-center min-h-screen",
+        className
+      )}
+    >
+       <div>
+        <h1 className="font-secondary text-5xl pt-32 pb-8 font-bold text-orangetitle text-center">Qual energia cósmica <br/> combina com você?</h1>
+        <p className="text-center font-secondary pb-24 text-white text-2xl font-light">Cada signo tem sua personalidade, sua vibe, seu jeito único de aproveitar <br/> a vida. E cada Kozmo foi criado para traduzir essa essência em sabor.</p>
+      </div>
 
+      <div className="flex items-center gap-24 ">
         {/* BOTÃO ESQUERDA */}
         <button onClick={prev}>
           <Icon name="leftArrow" color="white" />
@@ -144,10 +152,7 @@ export default function Carousel({ className }: Props) {
             }}
           >
             {infinite.map((item, i) => (
-              <div
-                key={i}
-                className="w-[266px] ml-8 flex-shrink-0 text-center"
-              >
+              <div key={i} className="w-[266px] ml-8 flex-shrink-0 text-center">
                 <Image
                   alt={item.title}
                   src={item.img}
@@ -155,11 +160,11 @@ export default function Carousel({ className }: Props) {
                   height={417}
                 />
 
-                <div className="flex-col w-60 py-10 mx-auto">
-                  <p className="font-primary text-primary text-3xl pb-4">
+                <div className="flex-col w-60 pt-4 mx-auto">
+                  <p className="font-primary pt-8 text-primary text-3xl pb-4">
                     {item.title}
                   </p>
-                  <p className="font-secondary font-light text-white text-1x1">
+                  <p className="font-secondary font-light text-white text-8x1">
                     {item.description}
                   </p>
                 </div>
@@ -172,7 +177,6 @@ export default function Carousel({ className }: Props) {
         <button onClick={next}>
           <Icon name="rightArrow" color="white" />
         </button>
-
       </div>
     </div>
   );
