@@ -1,3 +1,4 @@
+import BePartner from "@/src/components/partials/BePartner";
 import DrinkDetails from "@/src/components/partials/DrinkDetails";
 import Feedbacks from "@/src/components/partials/Feedbacks";
 import Home from "@/src/components/partials/Hero";
@@ -12,7 +13,7 @@ export default function Page() {
       {/* <KosmoEvents /> */}
       {/* <Carousel className="bg-purplebg" /> */}
       <Feedbacks />
-      {/* <BePartner /> */}
+      <BePartner />
       {/* <Footer /> */}
     </>
   );

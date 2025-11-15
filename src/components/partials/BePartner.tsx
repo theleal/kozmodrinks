@@ -4,9 +4,8 @@ import Button from "../Button";
 export default function BePartner() {
   return (
     <section className="w-full flex flex-col justify-center items-center gap-16 py-40 text-xl bg-[#EADDED]">
-      <div className="flex items-end justify-center gap-20">
+      <div className="flex justify-center gap-20">
         <div className="font-secondary flex flex-col justify-start text-[#502B70]">
-          
           <Image
             src="/assets/womandrink.webp"
             width={450}
@@ -31,19 +30,18 @@ export default function BePartner() {
                 height={6}
                 alt="check"
               />
-            <span>Alta margem de lucro</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Image
-              src="/assets/check.webp"
-              width={16}
-              height={6}
-              alt="check"
-            />
-            <span>Material de divulgação incluso</span>
+              <span>Alta margem de lucro</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/assets/check.webp"
+                width={16}
+                height={6}
+                alt="check"
+              />
+              <span>Material de divulgação incluso</span>
             </div>
           </div>
-
         </div>
 
         <div className="flex flex-col font-secondary font-medium gap-8 text-[#502B70]">
@@ -92,7 +90,6 @@ export default function BePartner() {
           </div>
         </div>
       </div>
-      
     </section>
   );
 }
