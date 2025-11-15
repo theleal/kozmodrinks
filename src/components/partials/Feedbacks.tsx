@@ -1,7 +1,6 @@
 "use client";
 
-
-import Card from "./Card";
+import Card from "../Card";
 
 const feedbacks = [
   {
@@ -47,11 +46,11 @@ const feedbacks = [
 
 export default function Feedbacks() {
   return (
-    <section className="w-full pt-20 pb-40 flex flex-col justify-center bg-orange items-center">
-      <h3 className="text-purple font-secondary text-5xl font-bold mb-20 ">
+    <section className="w-full lg:pt-20 pt-10 lg:pb-40 flex px-6 flex-col justify-center bg-orange items-center">
+      <h3 className="text-purple font-secondary lg:text-5xl text-3xl font-bold lg:mb-20 mb-10 text-center lg:text-start">
         Quem já provou, aprovou!
       </h3>
-      <div className="flex gap-10 justify-center max-w-7xl">
+      <div className="flex flex-col lg:flex-row gap-10 justify-center">
         {feedbacks.map((feedback, index) => (
           <Card
             key={index}

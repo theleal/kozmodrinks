@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Icon from "../icons";
+import Icon from "../../icons";
 
 type Props = {
   className?: string;

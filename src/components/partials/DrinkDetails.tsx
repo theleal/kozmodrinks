@@ -1,11 +1,14 @@
+"use client";
+import useMobile from "@/src/hooks/useMobile";
 import Image from "next/image";
-import Icon from "../icons";
+import Icon from "../../icons";
 
 export default function DrinkDetails() {
+  const isMobile = useMobile();
   return (
-    <section className="min-h-screen w-full flex flex-col justify-center items-center gap-20 py-32 bg-[#EADDED] ">
-      <div className="flex justify-center items-center gap-20">
-        <div className="flex items-center justify-center mr-20">
+    <section className="min-h-screen w-full flex flex-col justify-center items-center lg:gap-20 lg:py-32 py-20 bg-[#EADDED] ">
+      <div className="flex flex-col lg:flex-row justify-center items-center lg:gap-20">
+        <div className="flex items-center justify-center lg:mr-20">
           <div className="relative">
             <Image
               src="/assets/symbol.webp"
@@ -14,19 +17,19 @@ export default function DrinkDetails() {
               height={650}
             />
             <Image
-              className="absolute top-8 left-6/12"
+              className="absolute lg:top-8 lg:left-1/2 left-3/9 top-0"
               src="/assets/woman.webp"
               alt="woman"
-              width={460}
-              height={166}
+              width={isMobile ? 250: 460}
+              height={isMobile ? 90 : 166}
             />
           </div>
         </div>
-        <div className="font-secondary flex flex-col">
+        <div className="font-secondary flex flex-col mx-10">
           <h3 className="text-primary text-5xl font-medium">
             Mais do que um drink. <br /> Uma experiência astral.
           </h3>
-          <div className="font-normal flex flex-col gap-6 mt-6 mb-10 text-2xl">
+          <div className="font-normal flex flex-col gap-6 mt-6 mb-10 text-lg lg:text-2xl">
             <p>
               O mercado de bebidas é genérico. <br /> Repetitivo. Sem alma. A
               gente entendeu <br />
@@ -40,16 +43,16 @@ export default function DrinkDetails() {
             </p>
           </div>
 
-          <p className="font-bold w-max bg-orange shadow rounded-2xl pl-10 pr-16 py-4">
-            Por isso criamos Kozmo: drinks cremosos e <br /> refrescantes feitos
-            com frutas reais, sem <br />
-            artificialidades, cada um com a personalidade <br />
+          <p className="font-bold lg:w-max bg-orange shadow rounded-2xl lg:pl-10 px-4 lg:pr-16 py-4">
+            Por isso criamos Kozmo: drinks cremosos e {!isMobile ? <br /> : " "} refrescantes feitos
+            com frutas reais, sem {!isMobile ? <br /> : " "}
+            artificialidades, cada um com a personalidade {!isMobile ? <br /> : " "}
             de um signo do zodíaco.
           </p>
         </div>
       </div>
-      <div className="flex w-full pt-24 justify-center gap-40 items-center text-xl font-secondary">
-        <div className="flex flex-col items-center text-center gap-4 max-w-sm">
+      <div className="flex flex-col lg:flex-row w-full pt-24 justify-center lg:gap-40 gap-20 items-center text-xl font-secondary">
+        <div className="flex flex-col items-center text-center gap-4">
           <div className="bg-[url('/assets/bg-icons.webp')] bg-cover bg-center h-40 aspect-square flex items-center justify-center">
             <Icon name="drink" size={58} color="white" />
           </div>
@@ -63,7 +66,7 @@ export default function DrinkDetails() {
             com você.
           </p>
         </div>
-        <div className="flex flex-col items-center text-center gap-4 max-w-sm">
+        <div className="flex flex-col items-center text-center gap-4">
           <div className="bg-[url('/assets/bg-icons.webp')] bg-cover bg-center h-40 aspect-square flex items-center justify-center">
             <Icon name="plant" size={58} color="white" />
           </div>
@@ -76,7 +79,7 @@ export default function DrinkDetails() {
             <br /> puro que você sente na <br /> primeira mexida.
           </p>
         </div>
-        <div className="flex flex-col items-center text-center gap-4 max-w-sm">
+        <div className="flex flex-col items-center text-center gap-4">
           <div className="bg-[url('/assets/bg-icons.webp')] bg-cover bg-center h-40 aspect-square flex items-center justify-center">
             <Icon name="drink" size={58} color="white" />
           </div>
