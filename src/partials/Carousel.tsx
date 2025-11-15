@@ -2,16 +2,14 @@
 
 import clsx from "clsx";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useCallback } from "react";
 import Icon from "../icons";
+import Button from "../components/Button";
+import useEmblaCarousel from "embla-carousel-react";
 
 type Props = { className?: string };
 
 export default function Carousel({ className }: Props) {
-  const ITEM_WIDTH = 266;
-  const GAP = 32; // ml-8 no seu layout
-  const TOTAL_WIDTH = ITEM_WIDTH + GAP;
-
   const items = [
     {
       img: "/assets/Leo.webp",
@@ -69,48 +67,17 @@ export default function Carousel({ className }: Props) {
     },
   ];
 
-  // Criamos um mega-array (triplo)
-  const infinite = [...items, ...items, ...items];
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
-  // Começamos no bloco do meio
-  const base = items.length;
-  const startIndex = base;
+  const onPrevButtonClick = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
 
-  const [index, setIndex] = useState(startIndex);
-  const trackRef = useRef<HTMLDivElement>(null);
+  const onNextButtonClick = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
-  const next = () => setIndex((i) => i + 1);
-  const prev = () => setIndex((i) => i - 1);
-
-  // Controle de loop infinito sem “pulo”
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    let resetIndex = null;
-    // quando passa pro terceiro bloco → volta pro bloco do meio
-    if (index >= base * 2) {
-      track.style.transition = "none";
-      resetIndex = index - base;
-      requestAnimationFrame(() => {
-        track.style.transition = "transform 0.5s ease-out";
-      });
-    }
-    // quando passa para o bloco da esquerda → volta pro bloco do meio
-    if (index < base) {
-      track.style.transition = "none";
-      resetIndex = index + base;
-      requestAnimationFrame(() => {
-        track.style.transition = "transform 0.5s ease-out";
-      });
-    }
-    if (resetIndex !== null) {
-      // Evita chamada de setState dentro do corpo do useEffect
-      setTimeout(() => {
-        setIndex(resetIndex);
-      }, 0);
-    }
-  }, [index, base]);
+  const VIEWPORT_WIDTH = 1458;
 
   return (
     <div
@@ -132,61 +99,63 @@ export default function Carousel({ className }: Props) {
 
       <div className="flex items-center gap-24 ">
         {/* BOTÃO ESQUERDA */}
-        <button onClick={prev}>
+        <Button onClick={onPrevButtonClick}>
           <Icon name="leftArrow" color="white" />
-        </button>
+        </Button>
 
-        {/* VIEWPORT */}
+        {/* --- INÍCIO DA CORREÇÃO --- */}
+        {/* 1. Este 'div' pai agora agrupa o viewport E os fades */}
         <div
-          className="relative overflow-hidden"
-          style={{ width: TOTAL_WIDTH * 5 }}
+          className="relative"
+          style={{ width: `${VIEWPORT_WIDTH}px` }}
         >
-          {/* LEFT FADE */}
+          {/* 2. Este 'div' é o viewport, com 'overflow-hidden' e o 'ref' */}
+          <div className="overflow-hidden" ref={emblaRef}>
+            {/* 3. Este 'div' é o container, O ÚNICO FILHO do viewport */}
+            <div className="flex gap-8">
+              {items.map((item, i) => (
+                <div
+                  key={i}
+                  className="w-[266px] shrink-0 text-center"
+                >
+                  <Image
+                    className=""
+                    alt={item.title}
+                    src={item.img}
+                    width={266}
+                    height={417}
+                  />
+                  <div className="flex-col w-60 pt-4 mx-auto">
+                    <p className="font-primary pt-8 text-primary text-3xl pb-4">
+                      {item.title}
+                    </p>
+                    <p className="font-secondary font-light text-white text-xl">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 4. Os fades agora são "irmãos" do viewport,
+               posicionados por cima com 'absolute' */}
           <div
             className="pointer-events-none absolute left-0 top-0 h-full w-80
                        bg-linear-to-r from-purplebg to-transparent z-10"
           />
-
-          {/* RIGHT FADE */}
           <div
             className="pointer-events-none absolute right-0 top-0 h-full w-80
                        bg-linear-to-l from-purplebg to-transparent z-10"
           />
-
-          {/* TRACK */}
-          <div
-            ref={trackRef}
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{
-              transform: `translateX(-${index * TOTAL_WIDTH}px)`,
-            }}
-          >
-            {infinite.map((item, i) => (
-              <div key={i} className="w-[266px] ml-8 shrink-0 text-center">
-                <Image
-                  alt={item.title}
-                  src={item.img}
-                  width={266}
-                  height={417}
-                />
-
-                <div className="flex-col w-60 pt-4 mx-auto">
-                  <p className="font-primary pt-8 text-primary text-3xl pb-4">
-                    {item.title}
-                  </p>
-                  <p className="font-secondary font-light text-white text-8x1">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
+        {/* --- FIM DA CORREÇÃO --- */}
+
 
         {/* BOTÃO DIREITA */}
-        <button onClick={next}>
+        <Button onClick={onNextButtonClick}>
           <Icon name="rightArrow" color="white" />
-        </button>
+        </Button>
       </div>
     </div>
   );

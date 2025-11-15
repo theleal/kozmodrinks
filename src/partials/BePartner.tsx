@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "../components/Button";
+import Link from "next/link";
 
 export default function BePartner() {
   return (
@@ -58,8 +59,10 @@ export default function BePartner() {
             Kozmo não é só uma bebida. É uma <br /> experiência que seus
             clientes vão lembrar <br /> (e compartilhar nas redes).
           </p>
-          <Button className="bg-linear-to-r w-full mt-9 from-[#502B70] via-[#E0004D] to-[#FF8C1C] text-sm font-bold py-4 hover:cursor-pointer hover:opacity-80  transition-all duration-300">
-            QUERO SER PARCEIRO KOZMO
+          <Button className="bg-linear-to-r s w-full mt-9 from-[#502B70] via-[#E0004D] to-[#FF8C1C] text-sm font-bold py-4 hover:cursor-pointer hover:opacity-80  transition-all duration-300">
+            <Link href="https://wa.me/5513974153250" target="_blank" rel="noopener noreferrer">
+              QUERO SER PARCEIRO KOZMO
+            </Link>
           </Button>
           <div className="flex flex-col pt-14 gap-1">
             <div className="flex items-center gap-2">

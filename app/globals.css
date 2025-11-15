@@ -57,3 +57,9 @@
   50%  { transform: scale(1.07); }
   100% { transform: scale(1); }
 }
+
+
+.svgCurved{
+  display: inline-block;
+  z-index: 23;
+}

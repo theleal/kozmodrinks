@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "../components/Button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,18 +13,31 @@ export default function Home() {
         <p className="text-secondary font-secondary text-2xl mb-3">
           <b>
             Drinks artesanais com personalidade <br />
-            cósmica. 
+            cósmica.
           </b>
-           &nbsp; 12 sabores únicos inspirados nos <br /> signos do zodíaco. 100%
+          &nbsp; 12 sabores únicos inspirados nos <br /> signos do zodíaco. 100%
           natural.
         </p>
         <div className="flex gap-10">
-          <Button className=" h-16 bg-orange font-medium border-[0.25px] border-white uppercase">
-            Experimentar agora
-          </Button>
-          <Button className=" h-16 bg-purple font-medium border-[0.25px] border-white uppercase">
-            seja um parceiro
-          </Button>
+          <Link
+            href="https://wa.me/5513974153250"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className=" h-16 bg-orange font-medium border-[0.25px] border-white uppercase">
+              Experimentar agora
+            </Button>
+          </Link>
+
+          <Link
+            href="https://wa.me/5513974153250"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className=" h-16 bg-purple font-medium border-[0.25px] border-white uppercase">
+              seja um parceiro
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
