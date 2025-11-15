@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import clsx from "clsx";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import Icon from "../icons";
 
 type Props = { className?: string };
@@ -87,24 +87,28 @@ export default function Carousel({ className }: Props) {
     const track = trackRef.current;
     if (!track) return;
 
+    let resetIndex = null;
     // quando passa pro terceiro bloco → volta pro bloco do meio
     if (index >= base * 2) {
       track.style.transition = "none";
-      setIndex(index - base);
-
+      resetIndex = index - base;
       requestAnimationFrame(() => {
         track.style.transition = "transform 0.5s ease-out";
       });
     }
-
     // quando passa para o bloco da esquerda → volta pro bloco do meio
     if (index < base) {
       track.style.transition = "none";
-      setIndex(index + base);
-
+      resetIndex = index + base;
       requestAnimationFrame(() => {
         track.style.transition = "transform 0.5s ease-out";
       });
+    }
+    if (resetIndex !== null) {
+      // Evita chamada de setState dentro do corpo do useEffect
+      setTimeout(() => {
+        setIndex(resetIndex);
+      }, 0);
     }
   }, [index, base]);
 
@@ -115,9 +119,15 @@ export default function Carousel({ className }: Props) {
         className
       )}
     >
-       <div>
-        <h1 className="font-secondary text-5xl pt-32 pb-8 font-bold text-orangetitle text-center">Qual energia cósmica <br/> combina com você?</h1>
-        <p className="text-center font-secondary pb-24 text-white text-2xl font-light">Cada signo tem sua personalidade, sua vibe, seu jeito único de aproveitar <br/> a vida. E cada Kozmo foi criado para traduzir essa essência em sabor.</p>
+      <div>
+        <h1 className="font-secondary text-5xl pt-32 pb-8 font-bold text-orangetitle text-center">
+          Qual energia cósmica <br /> combina com você?
+        </h1>
+        <p className="text-center font-secondary pb-24 text-white text-2xl font-light">
+          Cada signo tem sua personalidade, sua vibe, seu jeito único de
+          aproveitar <br /> a vida. E cada Kozmo foi criado para traduzir essa
+          essência em sabor.
+        </p>
       </div>
 
       <div className="flex items-center gap-24 ">
@@ -134,13 +144,13 @@ export default function Carousel({ className }: Props) {
           {/* LEFT FADE */}
           <div
             className="pointer-events-none absolute left-0 top-0 h-full w-80
-                       bg-gradient-to-r from-purplebg to-transparent z-10"
+                       bg-linear-to-r from-purplebg to-transparent z-10"
           />
 
           {/* RIGHT FADE */}
           <div
             className="pointer-events-none absolute right-0 top-0 h-full w-80
-                       bg-gradient-to-l from-purplebg to-transparent z-10"
+                       bg-linear-to-l from-purplebg to-transparent z-10"
           />
 
           {/* TRACK */}
@@ -152,7 +162,7 @@ export default function Carousel({ className }: Props) {
             }}
           >
             {infinite.map((item, i) => (
-              <div key={i} className="w-[266px] ml-8 flex-shrink-0 text-center">
+              <div key={i} className="w-[266px] ml-8 shrink-0 text-center">
                 <Image
                   alt={item.title}
                   src={item.img}

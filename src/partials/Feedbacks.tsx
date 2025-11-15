@@ -1,7 +1,7 @@
 "use client";
 
 
-import Card from "./Card";
+import Card from "../components/Card";
 
 const feedbacks = [
   {
