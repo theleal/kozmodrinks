@@ -9,7 +9,7 @@ export default function Button({
   return (
     <button
       className={clsx(
-        "px-8 py-2 text-white rounded-full font-secondary text-lg",
+        "px-8 py-2 text-white rounded-full hover:cursor-pointer hover:opacity-80 transition-transform hover:scale-105 duration-300 font-secondary text-lg",
         className
       )}
       {...props}
@@ -18,3 +18,4 @@ export default function Button({
     </button>
   );
 }
+

@@ -30,8 +30,9 @@
   --color-primary: #e0004d;
   --color-orange: #ff8c1c;
   --color-purple: #492b93;
+  --color-purplebg: #502b70;
   --color-secondary: #290b42;
-
+  --color-orangetitle: #FF8C1C;
   --font-primary: "Kogaine Demo", sans-serif;
   --font-secondary: "Bricolage Grotesque", sans-serif;
   --font-tertiary: "Poppins", sans-serif;
@@ -49,4 +50,10 @@
 
 @utility animate-marquee {
   animation: marquee 10s linear infinite;
+}
+
+@keyframes bounceGrow {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.07); }
+  100% { transform: scale(1); }
 }
