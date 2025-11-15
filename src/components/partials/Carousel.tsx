@@ -3,9 +3,9 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { useCallback } from "react";
-import Icon from "../icons";
-import Button from "../components/Button";
+import Button from "../Button";
 import useEmblaCarousel from "embla-carousel-react";
+import Icon from "@/src/icons";
 
 type Props = { className?: string };
 
@@ -82,7 +82,7 @@ export default function Carousel({ className }: Props) {
   return (
     <div
       className={clsx(
-        "flex flex-col justify-center pb-32 pt-20 items-center min-h-screen",
+        "flex flex-col justify-center pb-32 items-center min-h-screen",
         className
       )}
     >

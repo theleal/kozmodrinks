@@ -1,11 +1,11 @@
-import BePartner from "@/src/partials/BePartner";
-import Carousel from "@/src/partials/Carousel";
-import DrinkDetails from "@/src/partials/DrinkDetails";
-import Feedbacks from "@/src/partials/Feedbacks";
-import Footer from "@/src/partials/Footer";
+import BePartner from "@/src/components/partials/BePartner";
+import Carousel from "@/src/components/partials/Carousel";
+import DrinkDetails from "@/src/components/partials/DrinkDetails";
+import Feedbacks from "@/src/components/partials/Feedbacks";
+import Footer from "@/src/components/partials/Footer";
+import KosmoEvents from "@/src/components/partials/KosmoEvents";
+import SpinnerText from "@/src/components/partials/Spinner";
 import Home from "@/src/partials/Hero";
-import KosmoEvents from "@/src/partials/KosmoEvents";
-import SpinnerText from "@/src/partials/Spinner";
 
 export default function Page() {
   return (
@@ -13,11 +13,12 @@ export default function Page() {
       <Home />
       <SpinnerText className="bg-primary" />
       <DrinkDetails />
-      <KosmoEvents />
+      <KosmoEvents /> 
       <Carousel className="bg-purplebg" />
       <Feedbacks />
       <BePartner />
       <Footer />
+
     </>
   );
 }
