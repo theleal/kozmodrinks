@@ -115,7 +115,7 @@ export default function Carousel({ className }: Props) {
   return (
     <div
       className={clsx(
-        "flex flex-col justify-center pb-32 items-center min-h-screen",
+        "flex flex-col justify-center pb-32 pt-20 items-center min-h-screen",
         className
       )}
     >

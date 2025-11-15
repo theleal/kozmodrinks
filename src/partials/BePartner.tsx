@@ -3,7 +3,7 @@ import Button from "../components/Button";
 
 export default function BePartner() {
   return (
-    <section className="w-full flex flex-col justify-center items-center gap-16 py-40 text-xl bg-[#EADDED]">
+    <section className="w-full flex flex-col  justify-center items-center gap-16 py-40 text-xl bg-[#EADDED]">
       <div className="flex items-end justify-center gap-20">
         <div className="font-secondary flex flex-col justify-start text-[#502B70]">
           
