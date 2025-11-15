@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Icon from "../icons";
+import Icon from "../../icons";
 
 export default function Footer() {
   return (
