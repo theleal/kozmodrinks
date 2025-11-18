@@ -27,7 +27,7 @@ export default function Footer() {
             </a>
           </div>
           <div>
-            <a href="https://tiktok.com/@kozmodrinks" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition">
+            <a href="https://www.instagram.com/kozmodrinks" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition">
               <Icon className="inline-block" name="instagram" size={18} color="white" />
             </a>
           </div>
