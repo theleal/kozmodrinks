@@ -12,61 +12,61 @@ type Props = { className?: string };
 export default function Carousel({ className }: Props) {
   const items = [
     {
-      img: "/assets/praiapisces.png",
+      img: "/assets/praiapisces.webp",
       title: "PISCES",
       description:
         "Suco de limão siciliano, Skol beats senses, Skol beats GT, açúcar refinado, corante alimentício, leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/praiacancer.png",
+      img: "/assets/praiacancer.webp",
       title: "CANCER",
       description:
         "Cachaça, coco fresco, leite e derivados, enzima lactase, açúcar.",
     },
     {
-      img: "/assets/praiacapricornius.png",
+      img: "/assets/praiacapricornius.webp",
       title: "CAPRICORNIUS",
       description:
         "Paçoca, cachaça, açúcar leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/praiagemini.png",
+      img: "/assets/praiagemini.webp",
       title: "GEMINI",
       description:
         "Rum cristal, suco de limão, hortelã, açucar, leite e derivados, enzima lactase",
     },
     {
-      img: "/assets/praialeo.png",
+      img: "/assets/praialeo.webp",
       title: "LEO",
       description:
         "Polpa de maracujá puro, açúcar refinado, cachaça, leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/praialibra.png",
+      img: "/assets/praialibra.webp",
       title: "LIBRA",
       description:
         "Vodka, Curaçau blue, mirtilo, leite e derivados, enzima lactase, açúcar..",
     },
     {
-      img: "/assets/praiasagitarius.png",
+      img: "/assets/praiasagitarius.webp",
       title: "SAGITARIUS",
       description:
         "Cachaça, suco de limão taiti, suco de limão siciliano, suco de laranja lima, açúcar, corante, leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/praiascorpio.png",
+      img: "/assets/praiascorpio.webp",
       title: "SCORPIO",
       description:
         "Vodka, suco de laranja, suco de cramberry, licor de pêssego, açúcar, leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/praiavirgo.png",
+      img: "/assets/praiavirgo.webp",
       title: "VIRGO",
       description:
         "Morango, vinho tinto suave, açúca refinado, leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/praiataurus.png",
+      img: "/assets/praiataurus.webp",
       title: "TAURUS",
       description:
         "Conhaque, Achocolatado, cacau em pó, açúcar refinado, leite e derivados, enzima lactase.",
