@@ -101,7 +101,7 @@ export default function DrinkDetails() {
         height="175"
         viewBox="0 0 1920 174"
         fill="none"
-        shape-rendering="optimizeSpeed"
+        shapeRendering="optimizeSpeed"
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="xMidYMax slice"
         aria-hidden="true"
