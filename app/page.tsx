@@ -5,7 +5,7 @@ import Feedbacks from "@/src/components/partials/Feedbacks";
 import Footer from "@/src/components/partials/Footer";
 import KosmoEvents from "@/src/components/partials/KosmoEvents";
 import SpinnerText from "@/src/components/partials/Spinner";
-import Home from "@/src/partials/Hero";
+import Home from "@/src/components/partials/Hero";
 
 export default function Page() {
   return (

@@ -12,58 +12,64 @@ type Props = { className?: string };
 export default function Carousel({ className }: Props) {
   const items = [
     {
-      img: "/assets/Leo.webp",
-      title: "LEO",
-      description:
-        "Conhaque, Achocolatado, cacau em pó, açúcar refinado, leite e derivados, enzima lactase.",
-    },
-    {
-      img: "/assets/Taurus.webp",
-      title: "TAURUS",
-      description:
-        "Maçã verde, gin, energético, açúcar refinado, leite e derivados, enzima lactase.",
-    },
-    {
-      img: "/assets/Aquarius.webp",
-      title: "AQUARIUS",
+      img: "/assets/praia_pisces.png",
+      title: "PISCES",
       description:
         "Suco de limão siciliano, Skol beats senses, Skol beats GT, açúcar refinado, corante alimentício, leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/Aries.webp",
-      title: "ARIES",
+      img: "/assets/praia_cancer.png",
+      title: "CANCER",
+      description:
+        "Cachaça, coco fresco, leite e derivados, enzima lactase, açúcar.",
+    },
+    {
+      img: "/assets/praia_capricornius.png",
+      title: "CAPRICORNIUS",
+      description:
+        "Paçoca, cachaça, açúcar leite e derivados, enzima lactase.",
+    },
+    {
+      img: "/assets/praia_gemini.png",
+      title: "GEMINI",
+      description:
+        "Rum cristal, suco de limão, hortelã, açucar, leite e derivados, enzima lactase",
+    },
+    {
+      img: "/assets/praia_leo.png",
+      title: "LEO",
       description:
         "Polpa de maracujá puro, açúcar refinado, cachaça, leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/Aries.webp",
-      title: "ARIES",
+      img: "/assets/praia_libra.png",
+      title: "LIBRA",
       description:
-        "Polpa de maracujá puro, açúcar refinado, cachaça, leite e derivados, enzima lactase.",
+        "Vodka, Curaçau blue, mirtilo, leite e derivados, enzima lactase, açúcar..",
     },
     {
-      img: "/assets/Aries.webp",
-      title: "ARIES",
+      img: "/assets/praia_sagitarius.png",
+      title: "SAGITARIUS",
       description:
-        "Polpa de maracujá puro, açúcar refinado, cachaça, leite e derivados, enzima lactase.",
+        "Cachaça, suco de limão taiti, suco de limão siciliano, suco de laranja lima, açúcar, corante, leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/Aries.webp",
-      title: "ARIES",
+      img: "/assets/praia_scorpio.png",
+      title: "SCORPIO",
       description:
-        "Polpa de maracujá puro, açúcar refinado, cachaça, leite e derivados, enzima lactase.",
+        "Vodka, suco de laranja, suco de cramberry, licor de pêssego, açúcar, leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/Aries.webp",
-      title: "ARIES",
+      img: "/assets/praia_virgo.png",
+      title: "VIRGO",
       description:
-        "Polpa de maracujá puro, açúcar refinado, cachaça, leite e derivados, enzima lactase.",
+        "Morango, vinho tinto suave, açúca refinado, leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/Aries.webp",
-      title: "ARIES",
+      img: "/assets/praia_taurus.png",
+      title: "TAURUS",
       description:
-        "Polpa de maracujá puro, açúcar refinado, cachaça, leite e derivados, enzima lactase.",
+        "Conhaque, Achocolatado, cacau em pó, açúcar refinado, leite e derivados, enzima lactase.",
     },
   ];
 
@@ -87,49 +93,46 @@ export default function Carousel({ className }: Props) {
       )}
     >
       <div>
-        <h1 className="font-secondary text-5xl pt-32 pb-8 font-bold text-orangetitle text-center">
+        <h1 className="text-shadow-2xs font-secondary text-3xl lg:text-5xl pt-32 pb-12 font-bold text-orangetitle text-center px-4 lg:px-0">
           Qual energia cósmica <br /> combina com você?
         </h1>
-        <p className="text-center font-secondary pb-24 text-white text-2xl font-light">
+        <p className="text-center font-secondary pb-12 lg:pb-24 text-white text-base lg:text-2xl font-light px-4 lg:px-0">
           Cada signo tem sua personalidade, sua vibe, seu jeito único de
-          aproveitar <br /> a vida. E cada Kozmo foi criado para traduzir essa
+          aproveitar <br className="hidden lg:block" /> a vida. E cada Kozmo foi criado para traduzir essa
           essência em sabor.
         </p>
       </div>
 
-      <div className="flex items-center gap-24 ">
-        {/* BOTÃO ESQUERDA */}
-        <Button onClick={onPrevButtonClick}>
+      <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-24">
+        <Button onClick={onPrevButtonClick} className="hidden lg:block">
           <Icon name="leftArrow" color="white" />
         </Button>
 
-        {/* --- INÍCIO DA CORREÇÃO --- */}
-        {/* 1. Este 'div' pai agora agrupa o viewport E os fades */}
         <div
-          className="relative"
-          style={{ width: `${VIEWPORT_WIDTH}px` }}
+          className="relative w-full max-w-[90vw] lg:max-w-[1458px]"
         >
-          {/* 2. Este 'div' é o viewport, com 'overflow-hidden' e o 'ref' */}
-          <div className="overflow-hidden" ref={emblaRef}>
-            {/* 3. Este 'div' é o container, O ÚNICO FILHO do viewport */}
-            <div className="flex gap-8">
+          <div 
+            className="overflow-hidden" 
+            ref={emblaRef}
+          >
+            <div className="flex">
               {items.map((item, i) => (
                 <div
                   key={i}
-                  className="w-[266px] shrink-0 text-center"
+                  className="w-[200px] lg:w-[266px] shrink-0 text-center ml-6 lg:ml-12"
                 >
                   <Image
-                    className=""
+                    className="shadow rounded-[60px] lg:rounded-[100px] w-[200px] lg:w-[266px] h-[313px] lg:h-[417px] object-fill [clip-path:inset(0_round_60px)] lg:[clip-path:inset(0_round_70px)]"
                     alt={item.title}
-                    src={item.img}
+                    src={item.img || "/placeholder.svg"}
                     width={266}
                     height={417}
                   />
-                  <div className="flex-col w-60 pt-4 mx-auto">
-                    <p className="font-primary pt-8 text-primary text-3xl pb-4">
+                  <div className="flex-col w-[200px] lg:w-60 pt-4 mx-auto">
+                    <p className="text-shadow-2xs font-primary pt-4 lg:pt-8 text-primary text-2xl lg:text-3xl pb-2 lg:pb-4">
                       {item.title}
                     </p>
-                    <p className="font-secondary font-light text-white text-xl">
+                    <p className="font-secondary font-light text-white text-sm lg:text-xl">
                       {item.description}
                     </p>
                   </div>
@@ -138,21 +141,25 @@ export default function Carousel({ className }: Props) {
             </div>
           </div>
 
-          {/* 4. Os fades agora são "irmãos" do viewport,
-               posicionados por cima com 'absolute' */}
           <div
-            className="pointer-events-none absolute left-0 top-0 h-full w-80
+            className="pointer-events-none absolute left-0 top-0 h-full w-16 lg:w-80
                        bg-linear-to-r from-purplebg to-transparent z-10"
           />
           <div
-            className="pointer-events-none absolute right-0 top-0 h-full w-80
+            className="pointer-events-none absolute right-0 top-0 h-full w-16 lg:w-80
                        bg-linear-to-l from-purplebg to-transparent z-10"
           />
         </div>
-        {/* --- FIM DA CORREÇÃO --- */}
 
+        <Button onClick={onNextButtonClick} className="hidden lg:block">
+          <Icon name="rightArrow" color="white" />
+        </Button>
+      </div>
 
-        {/* BOTÃO DIREITA */}
+      <div className="flex lg:hidden flex-row mt-6">
+        <Button onClick={onPrevButtonClick}>
+          <Icon name="leftArrow" color="white" />
+        </Button>
         <Button onClick={onNextButtonClick}>
           <Icon name="rightArrow" color="white" />
         </Button>

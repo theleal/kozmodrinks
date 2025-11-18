@@ -44,7 +44,7 @@ export default function DrinkDetails() {
           </div>
 
           <p className="font-bold lg:w-max bg-orange shadow rounded-2xl lg:pl-10 px-4 lg:pr-16 py-4">
-            Por isso criamos Kozmo: drinks cremosos e {!isMobile ? <br /> : " "} refrescantes feitos
+            Por isso criamosKozmo: drinks cremosos e {!isMobile ? <br /> : " "} refrescantes feitos
             com frutas reais, sem {!isMobile ? <br /> : " "}
             artificialidades, cada um com a personalidade {!isMobile ? <br /> : " "}
             de um signo do zodíaco.

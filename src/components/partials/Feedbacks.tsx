@@ -13,7 +13,7 @@ const feedbacks = [
     ),
     product: {
       name: "Taurus",
-      imageUrl: "/assets/drink-taurus.webp",
+      imageUrl: "/assets/drink_taurus.png",
     },
   },
   {
@@ -26,7 +26,7 @@ const feedbacks = [
     ),
     product: {
       name: "Leo",
-      imageUrl: "/assets/drink-leo.webp",
+      imageUrl: "/assets/drink_leo.png",
     },
   },
   {
@@ -39,14 +39,14 @@ const feedbacks = [
     ),
     product: {
       name: "Virgo",
-      imageUrl: "/assets/drink-virgo.webp",
+      imageUrl: "/assets/drink_virgo.png",
     },
   },
 ];
 
 export default function Feedbacks() {
   return (
-    <section className="w-full lg:pt-20 pt-10 lg:pb-40 flex px-6 flex-col justify-center bg-orange items-center">
+    <section className="w-full lg:pt-20 pt-10 lg:pb-40 flex px-6 flex-col justify-center bg-orange items-center pb-12">
       <h3 className="text-purple font-secondary lg:text-5xl text-3xl font-bold lg:mb-20 mb-10 text-center lg:text-start">
         Quem já provou, aprovou!
       </h3>
