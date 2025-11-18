@@ -3,6 +3,7 @@
 import useMobile from "@/src/hooks/useMobile";
 import Image from "next/image";
 import Button from "../Button";
+import Link from "next/link";
 
 export default function Home() {
   const isMobile = useMobile();
@@ -24,16 +25,31 @@ export default function Home() {
             Drinks artesanais com personalidade <br />
             cósmica.
           </b>
-          &nbsp; 12 sabores únicos inspirados nos {!isMobile ? <br /> : " "} signos do
-          zodíaco. 100% natural.
+          &nbsp; 12 sabores únicos inspirados nos {!isMobile ? (
+            <br />
+          ) : (
+            " "
+          )}{" "}
+          signos do zodíaco. 100% natural.
         </p>
         <div className="flex md:gap-10 gap-6 flex-col md:items-center md:justify-center lg:justify-normal md:flex-row">
-          <Button className=" md:h-16 bg-orange font-medium border-[0.25px] border-white uppercase">
-            Experimentar agora
-          </Button>
-          <Button className=" md:h-16 bg-purple font-medium border-[0.25px] border-white uppercase">
-            seja um parceiro
-          </Button>
+          <Link
+            href="https://wa.me/5513974153250"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className=" md:h-16 bg-orange font-medium border-[0.25px] border-white uppercase">
+              Experimentar agora
+            </Button>
+          </Link>
+          <Link
+            href="https://wa.me/5513974153250"
+            target="_blank"
+            rel="noopener noreferrer">
+            <Button className=" md:h-16 bg-purple font-medium border-[0.25px] border-white uppercase">
+              seja um parceiro
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
