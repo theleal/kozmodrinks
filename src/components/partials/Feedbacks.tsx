@@ -13,7 +13,7 @@ const feedbacks = [
     ),
     product: {
       name: "Taurus",
-      imageUrl: "/assets/drink_taurus.png",
+      imageUrl: "./assets/drink_taurus.png",
     },
   },
   {
@@ -26,7 +26,7 @@ const feedbacks = [
     ),
     product: {
       name: "Leo",
-      imageUrl: "/assets/drink_leo.png",
+      imageUrl: "./assets/drink_leo.png",
     },
   },
   {
@@ -39,7 +39,7 @@ const feedbacks = [
     ),
     product: {
       name: "Virgo",
-      imageUrl: "/assets/drink_virgo.png",
+      imageUrl: "./assets/drink_virgo.png",
     },
   },
 ];
@@ -47,11 +47,13 @@ const feedbacks = [
 export default function Feedbacks() {
   return (
     <section className="relative">
-      <div className="w-full lg:pt-20 pt-10 lg:pb-40 flex px-6 flex-col justify-center bg-orange items-center pb-12">
-        <h3 className="text-purple font-secondary lg:text-5xl text-3xl font-bold lg:mb-20 mb-10 text-center lg:text-start">
+      <div className="w-full xl:pt-20 pt-10 xl:pb-40 pb-12 flex px-6 flex-col justify-center bg-orange items-center">
+        <h3 className="text-purple font-secondary xl:text-5xl text-3xl font-bold xl:mb-20 mb-10 text-center xl:text-start">
           Quem já provou, aprovou!
         </h3>
-        <div className="flex flex-col lg:flex-row gap-10 justify-center">
+
+        {/* MOBILE + TABLET = coluna | DESKTOP = linha */}
+        <div className="flex flex-col xl:flex-row gap-10 justify-center items-center">
           {feedbacks.map((feedback, index) => (
             <Card
               key={index}
@@ -62,10 +64,11 @@ export default function Feedbacks() {
           ))}
         </div>
       </div>
+
+      {/* SVG de transição */}
       <svg
         className="absolute left-0 right-0 w-full pointer-events-none z-20 block"
-        // bottom ajustado para cobrir o gap de anti-aliasing
-        height="124"               // opcional: +2px para folga (original 122)
+        height="124"
         viewBox="0 0 1920 122"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

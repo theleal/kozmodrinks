@@ -1,12 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import Button from "../Button";
 import Link from "next/link";
+import useMobile from "@/src/hooks/useMobile";
 
 export default function BePartner() {
+  const isMobile = useMobile();
+
   return (
     <section
       className="
-      w-full flex flex-col justify-center gap-16 py-40 text-xl bg-[#EADDED]
+      w-full flex flex-col justify-center items-center gap-16 py-20 lg:py-40 text-xl bg-[#EADDED]
       px-5 lg:px-0
       text-center lg:text-left
     "
@@ -20,9 +25,9 @@ export default function BePartner() {
         "
       >
         {/* IMAGEM */}
-        <div className="font-secondary flex flex-col justify-start text-[#502B70]">
+        <div className="font-secondary flex pt-12 lg:pt-0 flex-col justify-start text-[#502B70]">
           <Image
-            src="/assets/womandrink.webp"
+            src="./assets/womandrink.webp"
             width={450}
             height={450}
             alt="woman"
@@ -31,24 +36,24 @@ export default function BePartner() {
         </div>
 
         {/* TEXTO */}
-        <div className="flex flex-col font-secondary font-medium gap-8 text-[#502B70]">
-          <h2 className="font-secondary text-primary text-6xl font-bold">
+        <div className="flex flex-col text-left font-secondary font-medium gap-8 text-[#502B70]">
+          <h2 className="font-secondary lg:text-left text-center text-primary text-6xl font-bold">
             Quer levar Kozmo <br /> pro seu negócio?
           </h2>
 
           <p>
             Se você tem um bar, pub, adega, casa
-            <br className="hidden lg:block" />
+            {!isMobile ? <br /> : " "}
             noturna ou organiza eventos, a gente quer
-            <br className="hidden lg:block" />
+            {!isMobile ? <br /> : " "}
             conversar com você.
           </p>
 
           <p>
             Kozmo não é só uma bebida. É uma
-            <br className="hidden lg:block" />
+            {!isMobile ? <br /> : " "}
             experiência que seus clientes vão lembrar
-            <br className="hidden lg:block" />
+            {!isMobile ? <br /> : " "}
             (e compartilhar nas redes).
           </p>
           <Link
@@ -58,7 +63,7 @@ export default function BePartner() {
           >
             <Button
               className="
-            bg-linear-to-r w-full mt-9
+            bg-linear-to-r w-full lg:mt-9 mt-4
             from-[#502B70] via-[#E0004D] to-[#FF8C1C]
             text-sm font-bold py-4
             hover:cursor-pointer hover:opacity-80
@@ -76,44 +81,74 @@ export default function BePartner() {
         className="
     flex
     lg:flex-row flex-col
-    items-center justify-center
-    pt-12 lg:gap-60 gap-12
+    lg:justify-center
+    lg:pt-12 lg:gap-60 gap-12
     text-xl text-[#502B70]
     text-center lg:text-left
   "
       >
         {/* COLUNA 1 */}
-        <div className="flex flex-col gap-1 items-center lg:items-start">
-          <div className="flex items-center gap-2 justify-center lg:justify-start">
-            <Image src="/assets/check.webp" width={16} height={6} alt="check" />
+        <div className="flex flex-col gap-1 lg:items-start">
+          <div className="flex items-center gap-2 lg:justify-start">
+            <Image
+              src="./assets/check.webp"
+              width={16}
+              height={6}
+              alt="check"
+            />
             <span>Produto exclusivo e diferenciado</span>
           </div>
 
-          <div className="flex items-center gap-2 justify-center lg:justify-start">
-            <Image src="/assets/check.webp" width={16} height={6} alt="check" />
+          <div className="flex items-center gap-2 lg:justify-start">
+            <Image
+              src="./assets/check.webp"
+              width={16}
+              height={6}
+              alt="check"
+            />
             <span>Alta margem de lucro</span>
           </div>
 
-          <div className="flex items-center gap-2 justify-center lg:justify-start">
-            <Image src="/assets/check.webp" width={16} height={6} alt="check" />
+          <div className="flex items-center gap-2 lg:justify-start">
+            <Image
+              src="./assets/check.webp"
+              width={16}
+              height={6}
+              alt="check"
+            />
             <span>Material de divulgação incluso</span>
           </div>
         </div>
 
         {/* COLUNA 2 */}
-        <div className="flex flex-col gap-1 items-center lg:items-start">
-          <div className="flex items-center gap-2 justify-center lg:justify-start">
-            <Image src="/assets/check.webp" width={16} height={6} alt="check" />
+        <div className="flex flex-col gap-1  lg:items-start">
+          <div className="flex items-center gap-2 lg:justify-start">
+            <Image
+              src="./assets/check.webp"
+              width={16}
+              height={6}
+              alt="check"
+            />
             <span>Marca forte e em crescimento</span>
           </div>
 
-          <div className="flex items-center gap-2 justify-center lg:justify-start">
-            <Image src="/assets/check.webp" width={16} height={6} alt="check" />
+          <div className="flex items-center gap-2 lg:justify-start">
+            <Image
+              src="./assets/check.webp"
+              width={16}
+              height={6}
+              alt="check"
+            />
             <span>Suporte completo da nossa equipe</span>
           </div>
 
-          <div className="flex items-center gap-2 justify-center lg:justify-start">
-            <Image src="/assets/check.webp" width={16} height={6} alt="check" />
+          <div className="flex items-center gap-2 lg:justify-start">
+            <Image
+              src="./assets/check.webp"
+              width={16}
+              height={6}
+              alt="check"
+            />
             <span>Alto giro e recompra garantida</span>
           </div>
         </div>

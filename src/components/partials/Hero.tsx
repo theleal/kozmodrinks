@@ -11,7 +11,7 @@ export default function Home() {
       <div className="flex flex-col container lg:mx-80 gap-4">
         <Image
           className="md:ml-40 ml-0 lg:ml-0"
-          src="/assets/logo.webp"
+          src="./assets/logo.webp"
           alt="logo"
           width={260}
           height={42}

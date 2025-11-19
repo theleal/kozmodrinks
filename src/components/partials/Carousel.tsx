@@ -12,61 +12,61 @@ type Props = { className?: string };
 export default function Carousel({ className }: Props) {
   const items = [
     {
-      img: "/assets/praiapisces.webp",
+      img: "./assets/praiapisces.webp",
       title: "PISCES",
       description:
         "Suco de limão siciliano, Skol beats senses, Skol beats GT, açúcar refinado, corante alimentício, leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/praiacancer.webp",
+      img: "./assets/praiacancer.webp",
       title: "CANCER",
       description:
         "Cachaça, coco fresco, leite e derivados, enzima lactase, açúcar.",
     },
     {
-      img: "/assets/praiacapricornius.webp",
+      img: "./assets/praiacapricornius.webp",
       title: "CAPRICORNIUS",
       description:
         "Paçoca, cachaça, açúcar leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/praiagemini.webp",
+      img: "./assets/praiagemini.webp",
       title: "GEMINI",
       description:
         "Rum cristal, suco de limão, hortelã, açucar, leite e derivados, enzima lactase",
     },
     {
-      img: "/assets/praialeo.webp",
+      img: "./assets/praialeo.webp",
       title: "LEO",
       description:
         "Polpa de maracujá puro, açúcar refinado, cachaça, leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/praialibra.webp",
+      img: "./assets/praialibra.webp",
       title: "LIBRA",
       description:
         "Vodka, Curaçau blue, mirtilo, leite e derivados, enzima lactase, açúcar..",
     },
     {
-      img: "/assets/praiasagitarius.webp",
+      img: "./assets/praiasagitarius.webp",
       title: "SAGITARIUS",
       description:
         "Cachaça, suco de limão taiti, suco de limão siciliano, suco de laranja lima, açúcar, corante, leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/praiascorpio.webp",
+      img: "./assets/praiascorpio.webp",
       title: "SCORPIO",
       description:
         "Vodka, suco de laranja, suco de cramberry, licor de pêssego, açúcar, leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/praiavirgo.webp",
+      img: "./assets/praiavirgo.webp",
       title: "VIRGO",
       description:
         "Morango, vinho tinto suave, açúca refinado, leite e derivados, enzima lactase.",
     },
     {
-      img: "/assets/praiataurus.webp",
+      img: "./assets/praiataurus.webp",
       title: "TAURUS",
       description:
         "Conhaque, Achocolatado, cacau em pó, açúcar refinado, leite e derivados, enzima lactase.",
@@ -82,8 +82,6 @@ export default function Carousel({ className }: Props) {
   const onNextButtonClick = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
-
-  const VIEWPORT_WIDTH = 1458;
 
   return (
     <div
@@ -124,7 +122,7 @@ export default function Carousel({ className }: Props) {
                   <Image
                     className="shadow rounded-[60px] lg:rounded-[100px] w-[200px] lg:w-[266px] h-[313px] lg:h-[417px] object-fill [clip-path:inset(0_round_60px)] lg:[clip-path:inset(0_round_70px)]"
                     alt={item.title}
-                    src={item.img || "/placeholder.svg"}
+                    src={item.img}
                     width={266}
                     height={417}
                   />
@@ -141,26 +139,18 @@ export default function Carousel({ className }: Props) {
             </div>
           </div>
 
+
           <div
-            className="pointer-events-none absolute left-0 top-0 h-full w-16 lg:w-80
+            className="pointer-events-none absolute left-0 top-0 h-full w-16 lg:w-20
                        bg-linear-to-r from-purplebg to-transparent z-10"
-          />
+          /> 
           <div
-            className="pointer-events-none absolute right-0 top-0 h-full w-16 lg:w-80
+            className="pointer-events-none absolute right-0 top-0 h-full w-16 lg:w-20
                        bg-linear-to-l from-purplebg to-transparent z-10"
           />
         </div>
 
         <Button onClick={onNextButtonClick} className="hidden lg:block">
-          <Icon name="rightArrow" color="white" />
-        </Button>
-      </div>
-
-      <div className="flex lg:hidden flex-row mt-6">
-        <Button onClick={onPrevButtonClick}>
-          <Icon name="leftArrow" color="white" />
-        </Button>
-        <Button onClick={onNextButtonClick}>
           <Icon name="rightArrow" color="white" />
         </Button>
       </div>

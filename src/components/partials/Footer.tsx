@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="flex w-full flex-col text-white font-secondary items-center">
       <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-3 lg:gap-20 bg-primary px-5 lg:px-20 py-8 lg:py-0 lg:h-52">
         <Image
-          src="/assets/logo-secondary.webp"
+          src="./assets/logo-secondary.webp"
           alt="logo"
           width={isMobile ? 240 : 300}
           height={isMobile ? 100 : 120}

@@ -7,19 +7,19 @@ export default function DrinkDetails() {
   const isMobile = useMobile();
   return (
     <section className="relative">
-      <div className="min-h-screen w-full flex flex-col justify-center items-center lg:gap-20 lg:py-32 py-20 bg-[#EADDED] ">
+      <div className="min-h-screen w-full flex flex-col justify-center items-center lg:gap-20 lg:py-32 py-20 pb-20 bg-[#EADDED] ">
         <div className="flex flex-col lg:flex-row justify-center items-center lg:gap-20">
           <div className="flex items-center justify-center lg:mr-20">
             <div className="relative">
               <Image
-                src="/assets/symbol.webp"
+                src="./assets/symbol.webp"
                 alt="symbol"
                 width={700}
                 height={650}
               />
               <Image
                 className="absolute lg:top-8 lg:left-1/2 left-3/9 top-0"
-                src="/assets/woman.webp"
+                src="./assets/woman.webp"
                 alt="woman"
                 width={isMobile ? 250 : 460}
                 height={isMobile ? 90 : 166}
@@ -28,24 +28,24 @@ export default function DrinkDetails() {
           </div>
           <div className="font-secondary flex flex-col mx-10">
             <h3 className="text-primary text-5xl font-medium">
-              Mais do que um drink. <br /> Uma experiência astral.
+              Mais do que um drink. {!isMobile ? <br /> : ""} Uma experiência astral.
             </h3>
             <div className="font-normal flex flex-col gap-6 mt-6 mb-10 text-lg lg:text-2xl">
               <p>
-                O mercado de bebidas é genérico. <br /> Repetitivo. Sem alma. A
-                gente entendeu <br />
+                O mercado de bebidas é genérico.  {!isMobile ? <br /> : ""} Repetitivo. Sem alma. A
+                gente entendeu  {!isMobile ? <br /> : ""}
                 que você não quer só matar a sede.
               </p>
               <p>
                 {" "}
-                Você quer viver momentos únicos. <br />
-                Quer sabor de verdade. Quer algo que combine <br /> com sua
+                Você quer viver momentos únicos.  {!isMobile ? <br /> : ""}
+                Quer sabor de verdade. Quer algo que combine  {!isMobile ? <br /> : ""} com sua
                 energia.{" "}
               </p>
             </div>
 
             <p className="font-bold lg:w-max bg-orange shadow rounded-2xl lg:pl-10 px-4 lg:pr-16 py-4">
-              Por isso criamosKozmo: drinks cremosos e{" "}
+              Por isso criamos Kozmo: drinks cremosos e{" "}
               {!isMobile ? <br /> : " "} refrescantes feitos com frutas reais,
               sem {!isMobile ? <br /> : " "}
               artificialidades, cada um com a personalidade{" "}
@@ -101,7 +101,6 @@ export default function DrinkDetails() {
         height="175"
         viewBox="0 0 1920 174"
         fill="none"
-        shapeRendering="optimizeSpeed"
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="xMidYMax slice"
         aria-hidden="true"
@@ -110,6 +109,7 @@ export default function DrinkDetails() {
           stroke="none"
           d="M957.137 11.4621C838.386 7.05357 686.532 12.1674 560.424 20.808C436.419 29.4487 187.882 62.2478 32.3494 83.7612C-365.94 140.542 -670.174 162.232 -979.662 171.402C-1103.67 175.105 -1235.56 177.574 -1522.98 166.993C-1810.4 156.413 -2081 121.85 -2081 121.85V0H3174V53.4308C3174 53.4308 2795.68 110.917 2341.69 107.214C2135.72 105.98 1854.08 95.3996 1637.59 67.7143C1526.2 53.4308 1363.31 35.6205 1218.81 25.0402C1075.89 13.9308 1011.26 13.2254 957.137 11.4621Z"
           fill="#EADDED"
+          fillOpacity="1"
         />
       </svg>
     </section>
