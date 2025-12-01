@@ -16,7 +16,6 @@ export default function BePartner() {
       text-center lg:text-left
     "
     >
-      {/* BLOCO PRINCIPAL */}
       <div
         className="
           flex lg:flex-row flex-col
@@ -24,7 +23,6 @@ export default function BePartner() {
           gap-20
         "
       >
-        {/* IMAGEM */}
         <div className="font-secondary flex pt-12 lg:pt-0 flex-col justify-start text-[#502B70]">
           <Image
             src="./assets/womandrink.webp"
@@ -35,7 +33,6 @@ export default function BePartner() {
           />
         </div>
 
-        {/* TEXTO */}
         <div className="flex flex-col text-left font-secondary font-medium gap-8 text-[#502B70]">
           <h2 className="font-secondary lg:text-left text-center text-primary text-6xl font-bold">
             Quer levar Kozmo <br /> pro seu negócio?
@@ -76,7 +73,6 @@ export default function BePartner() {
         </div>
       </div>
 
-      {/* LISTA DE BENEFÍCIOS */}
       <div
         className="
     flex
@@ -87,7 +83,6 @@ export default function BePartner() {
     text-center lg:text-left
   "
       >
-        {/* COLUNA 1 */}
         <div className="flex flex-col gap-1 lg:items-start">
           <div className="flex items-center gap-2 lg:justify-start">
             <Image
@@ -120,7 +115,6 @@ export default function BePartner() {
           </div>
         </div>
 
-        {/* COLUNA 2 */}
         <div className="flex flex-col gap-1  lg:items-start">
           <div className="flex items-center gap-2 lg:justify-start">
             <Image

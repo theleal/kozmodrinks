@@ -73,6 +73,13 @@ export default function Carousel({ className }: Props) {
     },
   ];
 
+   const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/assets/drink_leo.png";
+    link.download = "drink_leo.png";
+    link.click();
+  };
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   const onPrevButtonClick = useCallback(() => {
@@ -152,6 +159,12 @@ export default function Carousel({ className }: Props) {
 
         <Button onClick={onNextButtonClick} className="hidden lg:block">
           <Icon name="rightArrow" color="white" />
+        </Button>
+      </div>
+
+      <div className="pt-20">
+        <Button onClick={handleDownload} className="bg-orange items-center font-secondary text-purple">
+                <p className="text-purple font-secondary uppercase font-bold">Tabela nutricional</p>
         </Button>
       </div>
     </div>

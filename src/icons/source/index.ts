@@ -11,6 +11,7 @@ import Instagram from "./Instagram";
 import TikTok from "./TikTok";
 import Youtube from "./Youtube";
 import Whatsapp from "./Whatsapp";
+import FreeLactose from "./FreeLactose";
 
 export default {
   whatsapp: Whatsapp,
@@ -25,5 +26,6 @@ export default {
   like: Like,
   signal: Signal,
   star: Star,
+  freeLactose: FreeLactose,
   user: User,
 };

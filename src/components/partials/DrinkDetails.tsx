@@ -54,10 +54,10 @@ export default function DrinkDetails() {
             </p>
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row w-full pt-24 justify-center lg:gap-40 gap-20 items-center text-xl font-secondary">
+        <div className="flex flex-col lg:flex-row w-full pt-24 justify-center lg:gap-40 gap-20 lg:items-start text-xl font-secondary">
           <div className="flex flex-col items-center text-center gap-4">
             <div className="bg-[url('/assets/bg-icons.webp')] bg-cover bg-center h-40 aspect-square flex items-center justify-center">
-              <Icon name="drink" size={58} color="white" />
+              <Icon name="drink" size={40} color="white" />
             </div>
             <span className="text-3xl text-[#502B70]">12 Sabores Únicos</span>
             <p className="text-center">
@@ -84,7 +84,20 @@ export default function DrinkDetails() {
           </div>
           <div className="flex flex-col items-center text-center gap-4">
             <div className="bg-[url('/assets/bg-icons.webp')] bg-cover bg-center h-40 aspect-square flex items-center justify-center">
-              <Icon name="drink" size={58} color="white" />
+              <Icon name="freeLactose" size={70} color="white" />
+            </div>
+            <span className="text-3xl text-[#502B70]">Zero Lactose</span>
+            <p className="text-center">
+              <b>
+                Leve para o corpo e fácil de digerir.<br />
+              </b>{" "}
+              Nada de leite, nada de traços escondidos. <br /> Só a pureza do sabor que não pesa.{" "}
+              <br /> Um drink para todo mundo da roda!
+            </p>
+          </div>
+          <div className="flex flex-col items-center text-center gap-4">
+            <div className="bg-[url('/assets/bg-icons.webp')] bg-cover bg-center h-40 aspect-square flex items-center justify-center">
+              <Icon name="signal" size={58} color="white" />
             </div>
             <span className="text-3xl text-[#502B70]">Prático & Pronto</span>
             <p className="text-center">
